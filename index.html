@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS DO BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <table class="table caption-top table-sm" id="comodatoTable">
+            <caption>
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="abrirModalRegistro">
+    Registrar
+  </button>
+            </caption>
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Equipamento</th>
+                <th scope="col">Emprestado por</th>
+                <th scope="col">Retirado por</th>
+                <th scope="col">Data</th>
+                <th class="col">Status</th>
+                <th class="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            </tbody>
+          </table>
+
+          <!-- MODAL -->
+           <!-- Scrollable modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar movimentação</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                <!-- FORMULÁRIO -->
+                 <form action="">
+                   <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="equipamento" class="form-label">Equipamento</label>
+                                <input type="email" class="form-control" id="equipamento" placeholder="">
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="emprestadoPor" class="form-label">Emprestado por</label>
+                                <input type="email" class="form-control" id="emprestadoPor" placeholder="">
+                              </div>
+                        </div>
+                   </div>
+
+                   <!--SEGUNDA LINHA  -->
+
+                   <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="retiradoPor" class="form-label">Retirado por</label>
+                            <input type="email" class="form-control" id="retiradoPor" placeholder="">
+                          </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="data" class="form-label">Data do empréstimo</label>
+                            <input type="date" class="form-control" id="data" placeholder="">
+                          </div>
+                    </div>
+               </div>
+
+               <!-- TERCEIRA LINHA -->
+               <div class="row">
+                <div class="col-3">
+                   <select name="" id="status">
+                    <option value="" selected disabled>Status</option>
+                    <option value="">Emprestado</option>
+                    <option value="">Devolvido</option>
+                   </select>
+                </div>
+           </div>
+                 </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-success" id="registrarMovimentacao">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- SEGUNDO MODAL -->
+     <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar movimentação</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                <!-- FORMULÁRIO -->
+                 <form action="">
+                   <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="equipamento" class="form-label">Equipamento</label>
+                                <input type="email" class="form-control" id="equipamento" placeholder="">
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="emprestadoPor" class="form-label">Emprestado por</label>
+                                <input type="email" class="form-control" id="emprestadoPor" placeholder="">
+                              </div>
+                        </div>
+                   </div>
+
+                   <!--SEGUNDA LINHA  -->
+
+                   <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="retiradoPor" class="form-label">Retirado por</label>
+                            <input type="email" class="form-control" id="retiradoPor" placeholder="">
+                          </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="data" class="form-label">Data do empréstimo</label>
+                            <input type="date" class="form-control" id="data" placeholder="">
+                          </div>
+                    </div>
+               </div>
+
+               <!-- TERCEIRA LINHA -->
+               <div class="row">
+                <div class="col-3">
+                   <select name="" id="status">
+                    <option value="" selected disabled>Status</option>
+                    <option value="">Emprestado</option>
+                    <option value="">Devolvido</option>
+                   </select>
+                </div>
+           </div>
+                 </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-success" id="registrarMovimentacao">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+
+<!-- JAVASCRIPT DO BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
