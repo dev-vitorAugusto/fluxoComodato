@@ -13,11 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const emprestado = document.getElementById('emprestadoPor').value;
         const retirado = document.getElementById('retiradoPor').value;
         const data = document.getElementById('data').value;
+        const dataDevolucao = document.getElementById('dataDevolucao').value;
         const status = document.getElementById('status').value;
-        
+        const setor =  document.getElementById('setor').value;
+
       
-        if (equipamento && emprestado && retirado && data) {
-            const registro = { equipamento, emprestado, retirado, data, status };
+        if (equipamento && emprestado && retirado && data && dataDevolucao && setor) {
+            const registro = { equipamento, emprestado, retirado, data, status, dataDevolucao, setor};
             const registros = JSON.parse(localStorage.getItem('registros')) || [];
 
             if (indiceEdicao === null) {
@@ -67,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Botão Editar
             const editarBtn = document.createElement('button');
             editarBtn.innerText = '';
-            editarBtn.className = 'btn btn-warning btn-sm bi bi-pencil';
+            editarBtn.className = 'btn btn-warning btn-sm bi bi-pencil text-white';
             editarBtn.style.marginRight = "3px";
             editarBtn.onclick = () => editarRegistro(index);
             acaoCell.appendChild(editarBtn);
@@ -78,6 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
             excluirBtn.className = 'btn btn-danger btn-sm bi bi-trash';
             excluirBtn.onclick = () => excluirRegistro(index);
             acaoCell.appendChild(excluirBtn);
+
+             // Botão mais informações
+             const maisInfo = document.createElement('button');
+             maisInfo.innerText = '';
+             maisInfo.className = 'btn bi bi-info-circle';
+             maisInfo.onclick = () => info(index);
+             acaoCell.appendChild(maisInfo);
         });
     }
 
@@ -90,13 +99,35 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('emprestadoPor').value = registro.emprestado;
         document.getElementById('retiradoPor').value = registro.retirado;
         document.getElementById('data').value = registro.data;
+        document.getElementById('dataDevolucao').value = registro.dataDevolucao;
         document.getElementById('status').value = registro.status;
+        document.getElementById('setor').value = registro.setor;
 
         // Definir o índice do registro em edição
         indiceEdicao = index;
 
         var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
         modal.show();
+
+    }
+
+    function info(index) {
+        const registros = JSON.parse(localStorage.getItem('registros')) || [];
+        const registro = registros[index];
+
+        // Preencher os campos do formulário com os valores do registro selecionado
+        document.getElementById('equipamento2').value = registro.equipamento;
+        document.getElementById('emprestadoPor2').value = registro.emprestado;
+        document.getElementById('retiradoPor2').value = registro.retirado;
+        document.getElementById('data2').value = registro.data;
+        document.getElementById('dataDevolucao2').value = registro.dataDevolucao;
+        document.getElementById('setor2').value = registro.setor;
+
+
+       
+
+        var modal2 = new bootstrap.Modal(document.getElementById('exampleModal2'));
+        modal2.show();
 
     }
 
@@ -112,6 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('emprestadoPor').value = '';
         document.getElementById('retiradoPor').value = '';
         document.getElementById('data').value = '';
+        document.getElementById('dataDevolucao').value = '';
+        document.getElementById('setor').value = '';
         document.getElementById('status').value = 'ativo';
 
         indiceEdicao = null;
